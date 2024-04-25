@@ -84,18 +84,9 @@ Check out the **example** app in the [example](example) directory or the 'Exampl
 
 ## Main Contributors
 
-<table>
-  <tr>
-    <td align="center" style="vertical-align: top;"><a href="https://github.com/br-programmer"><img src="https://avatars.githubusercontent.com/u/30538983?s=100" width="100px;" alt=""/><br /><sub><b>Brayan Cantos</b></sub></a></td>
-    <td align="center" style="vertical-align: top;"><a href="https://github.com/diegoveloper"><img src="https://avatars.githubusercontent.com/u/4898256?s=100" width="100px;" alt=""/><br /><sub><b>diegoveloper</b></sub></a></td>
-    <td align="center" style="vertical-align: top;"><a href="https://github.com/ecarlosdev"><img src="https://avatars.githubusercontent.com/u/155333596?s=100" width="100px;" alt=""/><br /><sub><b>ecarlosdev</b></sub></a></td>
-    <td align="center" style="vertical-align: top;"><a href="https://github.com/jesuspedge"><img src="https://avatars.githubusercontent.com/u/74924269?s=100" width="100px;" alt=""/><br /><sub><b>Roger Bacab</b></sub></a></td>
-    <td align="center" style="vertical-align: top;"><a href="https://github.com/paolojoaquinp"><img src="https://avatars.githubusercontent.com/u/70081671?s=100" width="100px;" alt=""/><br /><sub><b>Paolo Joaquin Pinto</b></sub></a></td>
-    <td align="center" style="vertical-align: top;"><a href="https://github.com/monster555"><img src="https://avatars.githubusercontent.com/u/32662133?s=100" width="100px;" alt=""/><br /><sub><b>Daniel Coyula</b></sub></a></td>
-    <td align="center" style="vertical-align: top;"><a href="https://github.com/williamscafdev"><img src="https://avatars.githubusercontent.com/u/45320786?s=100" width="100px;" alt=""/><br /><sub><b>Williams M. Torres</b></sub></a></td>
-  </tr>
-</table>
-<br/>
+<a href="https://github.com/the-d-velopers/animated_book_widget/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=the-d-velopers/animated_book_widget" />
+</a>
 
 ## Awesome Mobile Libraries
 - Check out our other available [d-veloper libraries](https://github.com/the-d-velopers)
