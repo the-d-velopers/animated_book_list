@@ -193,7 +193,7 @@ class _AnimatedBookWidgetState extends State<AnimatedBookWidget>
     if (horinzontalFlipDirection == HorinzontalFlipDirection.left) {
       directionMatrix = Matrix4.identity()..scale(1.0, 1, 1);
     }
-    if (horinzontalFlipDirection == HorinzontalFlipDirection.rigth) {
+    if (horinzontalFlipDirection == HorinzontalFlipDirection.right) {
       directionMatrix = Matrix4.identity()..scale(-1.0, 1, 1);
     }
 
