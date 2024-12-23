@@ -50,6 +50,7 @@ class AnimatedBookWidget extends StatefulWidget {
     this.animationDuration = const Duration(milliseconds: 500),
     this.reverseAnimationDuration = const Duration(milliseconds: 500),
     this.backgroundBorderRadius = BorderRadius.zero,
+    this.horinzontalFlipDirection = HorinzontalFlipDirection.left,
   }) : contentDelegate = DefaultAnimatedContentDelegate(contentChild: content);
 
   /// Creates an [AnimatedBookWidget] with dynamic content
@@ -86,6 +87,8 @@ class AnimatedBookWidget extends StatefulWidget {
   ///
   /// The [backgroundBorderRadius] is the border
   /// radius applied to the background.
+  ///
+  /// The [horinzontalFlipDirection] is the flip direction applied to the book.
   AnimatedBookWidget.builder({
     required this.cover,
     required this.size,
@@ -102,6 +105,7 @@ class AnimatedBookWidget extends StatefulWidget {
     this.animationDuration = const Duration(milliseconds: 500),
     this.reverseAnimationDuration = const Duration(milliseconds: 500),
     this.backgroundBorderRadius = BorderRadius.zero,
+    this.horinzontalFlipDirection = HorinzontalFlipDirection.left,
   }) : contentDelegate = BuilderAnimatedContentDelegate(
           contentBuilder: contentBuilder,
           contentChild: contentChild,
@@ -146,6 +150,9 @@ class AnimatedBookWidget extends StatefulWidget {
   /// How far the shadow is spread.
   final double spreadRadius;
 
+  /// The horizontal flip direction applied to the book.
+  final HorinzontalFlipDirection horinzontalFlipDirection;
+
   @override
   State<AnimatedBookWidget> createState() => _AnimatedBookWidgetState();
 }
@@ -177,36 +184,50 @@ class _AnimatedBookWidgetState extends State<AnimatedBookWidget>
   late EdgeInsets padding = widget.padding;
   late Size size = widget.size;
   late double spreadRadius = widget.spreadRadius;
+  late HorinzontalFlipDirection horinzontalFlipDirection =
+      widget.horinzontalFlipDirection;
+  late Matrix4 directionMatrix;
 
   @override
   Widget build(BuildContext context) {
+    if (horinzontalFlipDirection == HorinzontalFlipDirection.left) {
+      directionMatrix = Matrix4.identity()..scale(1.0, 1, 1);
+    }
+    if (horinzontalFlipDirection == HorinzontalFlipDirection.rigth) {
+      directionMatrix = Matrix4.identity()..scale(-1.0, 1, 1);
+    }
+
     return Padding(
       padding: padding,
       child: SizedBox.fromSize(
         size: size,
         child: GestureDetector(
           onTap: onPressed,
-          child: Stack(
-            fit: StackFit.expand,
-            children: [
-              BackgroundBlur(
-                backgroundColor: backgroundColor,
-                backgroundShadowColor: backgroundShadowColor,
-                blurRadius: blurRadius,
-                spreadRadius: spreadRadius,
-                offset: backgroundBlurOffset,
-                borderRadius: backgroundBorderRadius,
-              ),
-              AnimatedContentWidget(
-                bookAnimation: animation,
-                delegate: contentDelegate,
-                borderRadius: backgroundBorderRadius,
-              ),
-              AnimatedCoverWidget(
-                listenable: animation,
-                cover: cover,
-              ),
-            ],
+          child: Transform(
+            transform: directionMatrix,
+            alignment: Alignment.center,
+            child: Stack(
+              fit: StackFit.expand,
+              children: [
+                BackgroundBlur(
+                  backgroundColor: backgroundColor,
+                  backgroundShadowColor: backgroundShadowColor,
+                  blurRadius: blurRadius,
+                  spreadRadius: spreadRadius,
+                  offset: backgroundBlurOffset,
+                  borderRadius: backgroundBorderRadius,
+                ),
+                AnimatedContentWidget(
+                  bookAnimation: animation,
+                  delegate: contentDelegate,
+                  borderRadius: backgroundBorderRadius,
+                ),
+                AnimatedCoverWidget(
+                  listenable: animation,
+                  cover: cover,
+                ),
+              ],
+            ),
           ),
         ),
       ),
