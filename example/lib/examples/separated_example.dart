@@ -41,8 +41,6 @@ class SeparatedExample extends StatelessWidget {
 
         /// For each object we return a widget with the data.
         return AnimatedBookWidget(
-                    horinzontalFlipDirection: HorinzontalFlipDirection.rigth,
-
           /// Size perameter.
           size: horizontalView ? widthSize : heightSize,
 
