@@ -175,7 +175,7 @@ class _AnimatedBookWidgetState extends State<AnimatedBookWidget>
       widget.backgroundColor ?? context.theme.scaffoldBackgroundColor;
 
   late Color backgroundShadowColor = widget.backgroundShadowColor ??
-      context.defaultTextStyle.color!.withOpacity(0.075);
+      context.defaultTextStyle.color!.withValues(alpha: 0.075);
 
   late double blurRadius = widget.blurRadius;
   AnimatedBookStatus bookStatus = AnimatedBookStatus.dismissed;
