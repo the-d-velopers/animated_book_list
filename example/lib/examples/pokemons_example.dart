@@ -69,7 +69,7 @@ class PokemonsExample extends StatelessWidget {
 
         final headlineSmallStyle = Theme.of(context).textTheme.headlineSmall;
 
-        final bgColorWhitewithOpacity = Colors.white.withOpacity(0.8);
+        final bgColorWhitewithOpacity = Colors.white.withValues(alpha: 0.8);
 
         /// For each object we return a widget with the data..
         return AnimatedBookWidget(
@@ -103,7 +103,7 @@ class PokemonsExample extends StatelessWidget {
                     radius: 70,
                     child: ColorFiltered(
                       colorFilter: ColorFilter.mode(
-                        Colors.black.withOpacity(0.7),
+                        Colors.black.withValues(alpha: 0.7),
                         BlendMode.modulate,
                       ),
                       child: imagePokemonBooks,

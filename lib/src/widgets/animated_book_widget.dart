@@ -175,7 +175,7 @@ class _AnimatedBookWidgetState extends State<AnimatedBookWidget>
       widget.backgroundColor ?? context.theme.scaffoldBackgroundColor;
 
   late Color backgroundShadowColor = widget.backgroundShadowColor ??
-      context.defaultTextStyle.color!.withOpacity(0.075);
+      context.defaultTextStyle.color!.withValues(alpha: 0.075);
 
   late double blurRadius = widget.blurRadius;
   AnimatedBookStatus bookStatus = AnimatedBookStatus.dismissed;
@@ -193,7 +193,7 @@ class _AnimatedBookWidgetState extends State<AnimatedBookWidget>
     if (horinzontalFlipDirection == HorinzontalFlipDirection.left) {
       directionMatrix = Matrix4.identity()..scale(1.0, 1, 1);
     }
-    if (horinzontalFlipDirection == HorinzontalFlipDirection.rigth) {
+    if (horinzontalFlipDirection == HorinzontalFlipDirection.right) {
       directionMatrix = Matrix4.identity()..scale(-1.0, 1, 1);
     }
 
